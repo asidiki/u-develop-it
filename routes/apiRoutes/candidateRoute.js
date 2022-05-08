@@ -48,16 +48,16 @@ router.get('/candidate/:id', (req, res) => {
 // Create a candidate
 router.post('/candidate', ({ body }, res) => {
   // Candidate is allowed not to be affiliated with a party
-    const errors = inputCheck(
-        body,
-        'first_name',
-        'last_name',
-        'industry_connected'
-    );
-    if (errors) {
-        res.status(400).json({ error: errors });
-        return;
-    }
+    // const errors = inputCheck(
+    //     body,
+    //     'first_name',
+    //     'last_name',
+    //     'industry_connected'
+    // );
+    // if (errors) {
+    //     res.status(400).json({ error: errors });
+    //     return;
+    // }
 
     const sql = `INSERT INTO candidates (first_name, last_name, industry_connected, party_id) VALUES (?,?,?,?)`;
     const params = [
